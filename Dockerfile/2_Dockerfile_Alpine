@@ -1,0 +1,4 @@
+# alpine installed all utilities (network, vi, wget...) 
+FROM alpine
+
+# run apk add --no-cached <app>

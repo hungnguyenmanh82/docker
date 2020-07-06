@@ -1,0 +1,15 @@
+# ubuntu: là image OS gốc để build image. Có thể chon Centos, hoặc  Debian ok => lấy từ hub.docker.com
+# nêu ko chọn tag version nó sẽ lấy version mới nhất
+FROM ubuntu
+    
+# cài đặt App lên ubuntu image ở trên => lệnh giống trên linux
+RUN ["apt-get", "update"]
+# de dung lenh show Process: "ps -ax" tren linux
+# "-y": de xac nhan install
+RUN ["apt-get", "install","-y", "procps"]
+# “Vim” là commandline editor trên linux
+RUN ["apt-get", "install", "-y", "vim"]
+#  ipconfig ở trong “net-tools”
+RUN ["apt-get", "install", "-y", "net-tools"]
+#sau khi run container thì run lẹch sau trên Bash
+CMD [“echo”,”Image created”] 

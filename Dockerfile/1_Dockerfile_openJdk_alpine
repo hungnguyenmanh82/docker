@@ -1,0 +1,28 @@
+FROM openjdk:8-jre-alpine
+
+# ENV của dockerfile, ko phải của Linux container
+ENV JAVA_FILE target/springboot-thymleaf-maven.jar
+
+# "/" = root in container linux
+ENV APP_HOME /
+
+# COPY <SRC-host> <DST-container>
+COPY $JAVA_FILE $APP_HOME/app.jar
+
+# linux commandline đứng tại WORKDIR on Container to run ENTRYPOINT
+WORKDIR $APP_HOME
+
+# cach1: after container linux starting, run ENTRYPOINT
+ENTRYPOINT ["java","-jar","app.jar"]
+
+#cach2(hay): run bash tren linux, sau do tu bash, dung CMD to run other commands
+# nếu ko khai báo mục này thì mặc định ENTRYPOINT = bash
+# ENTRYPOINT ["sh", "-c"]
+# CMD ["java -jar app.jar"]
+# CMD ["java -jar app2.jar"]
+
+# context-path = "/proxy2"
+# ENTRYPOINT ["java","-jar","app.jar","--server.servlet.context-path=/proxy2"]
+
+# cho phép app trong container listen ở port 8080 (port ở Docker network, ko phải port HostMachine)
+EXPOSE 8080

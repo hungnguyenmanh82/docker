@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:         
+   thymeleaf:                        #  <imageName> = <folderName>  + <serviceName>
+        build:
+           context: .                 # folder contains <dockerfileName>
+           dockerfile: Dockerfile_thymleaf     # <dockerfileName>
+        ports:
+          - "8087:8080"                  # <hostAddr:port>:<portContainerExpose>
+          - "127.0.0.1:8088:8080"        # 127.0.0.1:8089 la localhost tren hostMachine
+        # Nếu ko config network thì nó sẽ tạo 1 new network riêng cho container (ko chung với các container khác)
+        # <networkName> = <folderName> + <serviceName  
+
+        
