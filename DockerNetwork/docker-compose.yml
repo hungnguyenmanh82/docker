@@ -1,28 +1,26 @@
 version: '3.7'
 
 services:         
-   thymeleaf-no_internet:                        #  <imageName> = <folderName>  + <serviceName>
+   app-no_internet:                        #  <imageName> = <folderName>  + <serviceName>
         build:
            context: .                 # folder contains <dockerfileName>
-           dockerfile: Dockerfile_thymleaf     # <dockerfileName>
+           dockerfile: Dockerfile_Alpine     # <dockerfileName>
         ports:
           - "8087:8080"                  # <hostAddr:port>:<portContainerExpose>
           - "127.0.0.1:8088:8080"        # 127.0.0.1:8089 la localhost tren hostMachine
         networks:
             - no-internet-network        # <network-name>
-        command: ping -c 3 google.com        # lệnh này sẽ báo lỗi
         # Nếu ko config network thì nó sẽ tạo 1 new network riêng cho container (ko chung với các container khác)
         # <networkName> = <folderName> + <serviceName 
                
-   thymeleaf-internet:                        #  <imageName> = <folderName>  + <serviceName>
+   app-internet:                        #  <imageName> = <folderName>  + <serviceName>
         build:
            context: .                 # folder contains <dockerfileName>
-           dockerfile: Dockerfile_thymleaf     # <dockerfileName>
+           dockerfile: Dockerfile_Alpine     # <dockerfileName>
         ports:
           - "8089:8080"                  # <hostAddr:port>:<portContainerExpose>
         networks:
             - internet-network        # <network-name>
-        command: ping -c 3 google.com        # lệnh này sẽ ok
         # Nếu ko config network thì nó sẽ tạo 1 new network riêng cho container (ko chung với các container khác)
         # <networkName> = <folderName> + <serviceName  
         

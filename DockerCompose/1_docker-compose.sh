@@ -21,15 +21,16 @@ docker-compose  down --rmi all  -v
 
 # cach 2 (not good): build lai toan bo
 #  --force-recreate    Recreate containers even if their configuration and image haven't changed.
-#  --build             Build images before starting containers.
+#  --build             Build all images before starting containers.
 docker-compose up --force-recreate --build
 
 # cach 3 (not good): chi build Image can thay doi
 # <service_name> in docker-compose.yml 
 docker-compose up --force-recreate --build  <service_name>
-docker-compose up --force-recreate --build  test-nginx
+
 
 #====================================== show containers ========================
 # show all containers of docker-compose
 docker-compose ps
 
+docker-compose images

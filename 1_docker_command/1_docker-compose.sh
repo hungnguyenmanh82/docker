@@ -36,7 +36,9 @@ docker-compose up --force-recreate --build
 # cach 3 (not good): chi build Image can thay doi
 # <service_name> in docker-compose.yml 
 docker-compose up --force-recreate --build  <service_name>
-docker-compose up --force-recreate --build  test-nginx
+
+#====================================== show images ========================
+docker-compose images
 
 #====================================== show containers ========================
 # show all containers of docker-compose

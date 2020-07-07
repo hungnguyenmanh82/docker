@@ -2,7 +2,7 @@
 # -v: volume (= mount unix).
 # :ro  read-only folder on Container
 # xem Dockerfile thì EXPOSE port = 80
-# --rm: automatic remove when container exits
+# --rm: automatic remove when the container exits (recreate container and run)
 # --name: đặt tên cho container (ko cần cũng ko sao)
 # -d: detach = run at background, don't show log
 # -it: để show bash ở foreground => mặc định rồi ko cần cũng đc

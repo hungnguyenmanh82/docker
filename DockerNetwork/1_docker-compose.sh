@@ -34,3 +34,4 @@ docker-compose up --force-recreate --build  test-nginx
 # show all containers of docker-compose
 docker-compose ps
 
+docker-compose images
