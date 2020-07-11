@@ -5,13 +5,12 @@ docker-compose up --help
 # run at foreground and show logs of STDOUT and STDERROR
 # will build image and create container if it is not exist => run docker-compose.yml at "." folder
 docker-compose up
+# -d: detach = run at background, dont show STDOUT and STDERROR
+docker-compose up -d 
 
 # -f: file
 docker-compose -f 1_docker-compose_staticData.yml up
 docker-compose -f 2_docker-compose_routingProxy.yml up
-
-# -d: detach = run at background, dont show STDOUT and STDERROR
-docker-compose up -d 
 
 # ===================================== Stop and remove container ========================= 
 # remove all: container, networks

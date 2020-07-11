@@ -13,6 +13,11 @@ docker run --rm --name test-nginx -v /some/content:/usr/share/nginx/html:ro  -p 
 
 # =================================== show container ====================================
 docker ps -a
+# dùng cách này để thống nhất với các lệnh khác
+docker container ls
+docker image ls
+docker network ls
+docker volume ls
 
 # 
 docker stop <containerId>
