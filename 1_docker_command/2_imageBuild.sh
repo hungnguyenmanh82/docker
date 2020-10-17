@@ -1,3 +1,4 @@
+# thuong dung docker-compose de build image => ko dung docker build
 docker build --help
 # ========================================= create Image ===========================
 # -t: Tag   => chính là version của Image do ta đặt tên

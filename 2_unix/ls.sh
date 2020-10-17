@@ -8,7 +8,7 @@ ls -R | grep <keyword> | more
 # show detail
 ls –l
 ls *<find_key>*
-ls *guide*
+
 # ls for 2 level folders 
 ls */*
 # ls for 3 level folders

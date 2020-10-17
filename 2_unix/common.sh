@@ -1,6 +1,8 @@
 ls
 cd
 pwd
+which
+
 
 
 

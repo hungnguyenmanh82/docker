@@ -1,9 +1,10 @@
 # cách 1: dùng docker-compose để copy khi build images 
-# cách 2(nên): copy at runtime để chánh phải build lại project nhiều lần
+# cách 2(debug): copy at runtime để chánh phải build lại project nhiều lần
 
 
 # docker cp <source>:<dir> <destination>:<dir>
 # <source>, <destination>: có thể là host or container
+# test-nginx: là domain = hostname container trong docker-network
 docker cp test-nginx:/etc/nginx/nginx.conf ./config
 docker cp test-nginx:/etc/nginx/conf.d/default.conf ./config
 

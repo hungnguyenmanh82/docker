@@ -11,7 +11,7 @@ services:
         networks:
             - no-internet-network        # <network-name>
         # Nếu ko config network thì nó sẽ tạo 1 new network riêng cho container (ko chung với các container khác)
-        # <networkName> = <folderName> + <serviceName 
+        # <networkName> = <folderName> + <serviceName> 
                
    app-internet:                        #  <imageName> = <folderName>  + <serviceName>
         build:
@@ -22,7 +22,7 @@ services:
         networks:
             - internet-network        # <network-name>
         # Nếu ko config network thì nó sẽ tạo 1 new network riêng cho container (ko chung với các container khác)
-        # <networkName> = <folderName> + <serviceName  
+        # <networkName> = <folderName> + <serviceName>  
         
         
 networks:

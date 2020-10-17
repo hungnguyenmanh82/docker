@@ -22,6 +22,7 @@ docker-compose -f 2_docker-compose_routingProxy.yml rm
 # ==================================== remove all =============================================
 # --rmi: remove images
 # -v: remove volumes
+docker-compose down --rmi all  -v
 docker-compose -f 2_docker-compose_routingProxy.yml down --rmi all  -v
 
 #====================================  rebuild and run all containers =======================
