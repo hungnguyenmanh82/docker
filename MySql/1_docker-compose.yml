@@ -1,20 +1,18 @@
 version: '3.7'
 
 services:           
-    db_callcenter:                        #  <imageName> = <folderName>  + <serviceName>
-        image: mysql:8
-        restart: always                    # khi Host OS restart lại docker sẽ tự khởi động service này
+    db-sample:                        #  <imageName> = <folderName>  + <serviceName> = mysql_db-sample
+        image: mysql:8                    # <containerName> = <imageName> + <number> = mysql_db-sample_1
+        restart: always                    # khi Host OS restart lại, docker sẽ tự khởi động service này
         environment:                       # Enviroment Variable trên linux cua container.
             - "MYSQL_ROOT_PASSWORD=123456789"     # password của root = “123456789”
-            - "MYSQL_DATABASE=prj_callcenter"
+            - "MYSQL_DATABASE=sample_db"          # name of Database in MySql container
             - "MYSQL_USER:dbuser"             # user để connect tới database
             - "MYSQL_PASSWORD:dbpass"         # password của user
-        ports:                           # EXPOSE 3306 33060
+        ports:                           # EXPOSE 3306 33060  => Port 33060 for security
             - "3307:3306"               # <hostAddr:port>:<portContainerExpose>
-        
-        volumes:                          # share-folder with host
-            - mysql_bkp:/var/lib/mysql    # <hostFolder>:<containerFolder>
-                                        
+        volumes:                       # <xem về volumes>
+            - /data/hostFolder:/var/lib/mysql    # <hostFolder>:<containerFolder>
 
             
 

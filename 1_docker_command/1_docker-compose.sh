@@ -12,6 +12,13 @@ docker-compose up -d
 docker-compose -f 1_docker-compose_staticData.yml up
 docker-compose -f 2_docker-compose_routingProxy.yml up
 
+# ==================================== stop and start ================================
+# stop services but dont remove container (dữ liệu trong đó ko bị mất)
+docker-compose stop
+
+# start services: nghĩa là start container chứa dữ liệu đã bị stop ở lệnh trên
+ docker-compose start
+ 
 # ===================================== Stop and remove container ========================= 
 # remove all: container, networks
 docker-compose -f 2_docker-compose_routingProxy.yml down
