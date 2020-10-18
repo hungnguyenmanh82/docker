@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
 
-  wordpress:
-    image: wordpress:php7.1
+  wordpress:                     #  <imageName> = <folderName>  + <serviceName> = wordpress_wordpress
+    image: wordpress:php7.1      # <containerName> = <imageName> + <number> = wordpress_wordpress_1
     restart: always
     # /var/www/html  tren container
     # hostPort = 8080. dockerPort=80  => http://localhost:8080/
